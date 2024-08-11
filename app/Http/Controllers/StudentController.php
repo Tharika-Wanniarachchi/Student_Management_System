@@ -15,7 +15,8 @@ class StudentController extends Controller
      */
     public function index(): View
     {
-        //
+        $students = Student::all(); // Retrieve all students
+        return view ('pages.students.index')->with('students',$students); // Display them in a view
     }
 
     /**
@@ -23,15 +24,17 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.students.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request):RedirectResponse
     {
-        //
+       $input_details = $request->all();
+       Student::create($input_details);
+       return redirect('students')->with('flash_message','Student Succsussfully Added!');
     }
 
     /**

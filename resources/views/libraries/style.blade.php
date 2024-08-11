@@ -6,7 +6,11 @@
 {{-- Side bar styles --}}
 
 <style>
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .navigat{
     background-color: #8caa046f;
 }
@@ -14,7 +18,7 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 20%;
   background-color: #f1f1f1;
   position: fixed;
   height: 100%;
@@ -49,11 +53,12 @@ div.content {
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 770px) {
   .sidebar {
     width: 100%;
     height: auto;
     position: relative;
+    margin-bottom: 50px;
   }
   .sidebar a {float: left;}
   div.content {margin-left: 0;}
@@ -66,4 +71,13 @@ div.content {
     float: none;
   }
 }
+
+
+
+/* table styles */
+
+.table-card{
+    margin-top: 100px;
+}
+
 </style>
