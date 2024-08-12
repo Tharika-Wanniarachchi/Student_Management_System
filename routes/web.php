@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+
 
 
 /*
@@ -27,9 +29,9 @@ Route::get('/home', function () {
 //     return view('pages.students.index');
 // });
 
-Route::get('/student', [StudentController::class, 'index']); // maps the '/student' URL to the index method in the 'StudentController' class.
+//Route::get('/student', [StudentController::class, 'index']); // maps the '/student' URL to the index method in the 'StudentController' class.
 
-Route::resource('students', StudentController::class); //This single line creates multiple routes that map to the typical CRUD operations
+Route::resource('/students', StudentController::class); //This single line creates multiple routes that map to the typical CRUD operations
 
 // The Route::resource method automatically creates the following routes:
 
@@ -40,3 +42,5 @@ Route::resource('students', StudentController::class); //This single line create
 //     GET	        /students/{id}/edit	    edit	    Show a form to edit an existing student
 //     PUT/PATCH	/students/{id}	        update	    Update a specific student in the database
 //     DELETE	    /students/{id}	        destroy	    Delete a specific student
+
+Route::resource('teachers', TeacherController::class); //This single line creates multiple routes that map to the typical CRUD operations
