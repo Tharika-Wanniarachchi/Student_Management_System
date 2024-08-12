@@ -29,8 +29,14 @@
                                 <td>{{ $student->mobile }}</td>
                                 <td>
                                     <a href="{{ url('/students/'.$student->id) }}" title="view student" class="btn btn-info">View</a>
-                                    <a href="{{ url('/students/'.$student->id.'/edit') }}" title="Edit student" class="btn btn-warning">Edit</a>
-                                    <a href="{{ url('/students/'.$student->id.'/delete') }}" title="Edit student" class="btn btn-danger">Delete</a>
+                                    <a href="{{ url('/students/'.$student->id.'/edit') }}" title="Edit student" class="btn btn-warning"
+                                        onclick="return confirm('Are you sure you want to edit this student?');">Edit</a>
+                                    <form action="{{ url('/students/' . $student->id) }}" method="POST" style="display:inline;"
+                                        onsubmit="return confirm('Are you sure you want to delete this student?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" title="Delete student">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

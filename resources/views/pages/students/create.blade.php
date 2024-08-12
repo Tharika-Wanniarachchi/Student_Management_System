@@ -4,7 +4,7 @@
 
 <div class="card m-5">
     <div class="card-header">
-        Student Page
+        Add new Student
     </div>
     <div class="card-body">
         <form action="{{ url('/students') }}" method="POST">
