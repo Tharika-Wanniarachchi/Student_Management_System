@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\CourseController;
+
 
 
 
@@ -44,3 +46,5 @@ Route::resource('/students', StudentController::class); //This single line creat
 //     DELETE	    /students/{id}	        destroy	    Delete a specific student
 
 Route::resource('teachers', TeacherController::class); //This single line creates multiple routes that map to the typical CRUD operations
+
+Route::resource('courses', CourseController::class);
