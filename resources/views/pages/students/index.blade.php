@@ -28,8 +28,9 @@
                                 <td>{{ $student->address }}</td>
                                 <td>{{ $student->mobile }}</td>
                                 <td>
-                                    <a href="{{ url('/student/'.$student->id) }}" title="view student" class="btn btn-secondary">View</a>
-                                    <a href="{{ url('/student/'.$student->id.'/edit') }}" title="Edit student" class="btn btn-primary">Edit</a>
+                                    <a href="{{ url('/students/'.$student->id) }}" title="view student" class="btn btn-info">View</a>
+                                    <a href="{{ url('/students/'.$student->id.'/edit') }}" title="Edit student" class="btn btn-warning">Edit</a>
+                                    <a href="{{ url('/students/'.$student->id.'/delete') }}" title="Edit student" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
