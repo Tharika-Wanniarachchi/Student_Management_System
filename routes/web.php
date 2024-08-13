@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
-
-
+use App\Http\Controllers\BatchController;
 
 
 /*
@@ -45,6 +44,9 @@ Route::resource('/students', StudentController::class); //This single line creat
 //     PUT/PATCH	/students/{id}	        update	    Update a specific student in the database
 //     DELETE	    /students/{id}	        destroy	    Delete a specific student
 
-Route::resource('teachers', TeacherController::class); //This single line creates multiple routes that map to the typical CRUD operations
+Route::resource('/teachers', TeacherController::class); //This single line creates multiple routes that map to the typical CRUD operations
 
-Route::resource('courses', CourseController::class);
+Route::resource('/courses', CourseController::class);
+
+Route::resource('/batches', BatchController::class);
+
